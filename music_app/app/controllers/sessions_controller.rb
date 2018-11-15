@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:email],params[:user][:password])
+    @user = User.find_by_credentials(params[:user][:email],params[:user][:password])
     # debugger
-    if user
-    log_in_user!(user)
+    if @user
+    log_in_user!(@user)
     redirect_to users_url
   else
+    flash.now[:errors] = @user.errors.full_messages
     render :new
   end
 

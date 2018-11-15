@@ -11,11 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user
-      user.save!
+    @user = User.new(user_params)
+    if @user
+      @user.save!
       render json:user
     else
+      flash.now[:errors] = @user.errors.full_messages
       render :new
     end
   end
