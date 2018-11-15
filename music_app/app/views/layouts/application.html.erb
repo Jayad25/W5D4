@@ -4,6 +4,20 @@
     <title>MusicApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <% if logged_in? %>
+    <form  action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" name="" value="SignOut">
+    </form>
+    <% else %>
+    <form  action="<%= new_session_url%>" method="get">
+      <input type="submit"  value="SignIN">
+    </form>
+    <br>
+    <form action="<%= new_user_url %>" method="get">
+      <input type="submit" value="SignUP">
+    </form>
+    <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
