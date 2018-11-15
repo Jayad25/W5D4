@@ -1,0 +1,12 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+
+<form  action="<%=users_url  %>" method="post">
+  <label>Email
+  <input type="text" name="user[email]" value=""></label>
+  <label>Password
+  <input type="password" name="user[password]" value=""></label>
+  <input type="submit"  value="Signup">
+
+</form>
