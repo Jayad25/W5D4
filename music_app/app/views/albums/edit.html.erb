@@ -1,0 +1,27 @@
+<form  action="<%= albums_url(@album) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label>Title:
+  <input type="text" name="album[title]" value=" <%= album[title] %>"></label>
+  <br>
+  <label>Year:
+  <input type="text" name="album[year]" value="<%= album[year] %>"></label>
+  <br>
+  <br>
+  <label>type_of_band
+  <input type="radio" name="album[type_of_band]" value="live" checked="checked">Live
+  <input type="radio" name="album[type_of_band]" value="Studio" >Studio
+  </label>
+
+  <br>
+  <br>
+  <select name="album[band_id]"> Band
+    <% @bands.each do |band| %>
+    <option value="<%= if band.id = params[:band_id] %>" selected="selected"><%= band.id %></option>
+    <% end %>
+  </select>
+  <br>
+<br>
+  <input type="submit" name="" value="create album">
+
+</form>

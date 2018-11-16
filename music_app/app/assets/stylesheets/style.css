@@ -1,5 +1,10 @@
 body {
     text-align: center;
+    /* background-image: url("images.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 12
+
 }
 form {
     display: inline-block;

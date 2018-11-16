@@ -2,6 +2,11 @@
 <h2> Bands </h2>
 
 <% @bands.each do |band| %>
-<%= band.name %>
+Band Name:<%= band.name %>
 <br>
+Albums:
+<% band.albums.each do |album| %>
+   <a href="<%= album_url(album) %>"><p><%= album.title %></a>
+<br>
+<% end %>
 <% end %>
