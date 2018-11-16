@@ -20,14 +20,24 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    # @album = Album.find(params[:id])
+
   end
 
   def update
+    @album = Album.find(params[:id])
+    if @album.update_attributes(album_params)
+      render :show
+    else
+      flash.now[:errors] = @album.errors.full_messages
+      render :edit
+    end
+
   end
 
   def index
     @albums = Album.all
-    render json:@albums
+    # render json:@albums
   end
 
   def destroy

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user
       @user.save!
+      session[:session_token] = @user.session_token
       redirect_to bands_url
     else
       flash.now[:errors] = @user.errors.full_messages

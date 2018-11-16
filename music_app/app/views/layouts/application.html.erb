@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MusicApp</title>
+    <h1> Music App </h1>
+    <title>Music App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <% if logged_in? %>
-    <form  action="<%= session_url %>" method="post">
+    <form  class ="sigin_button" action="<%= session_url %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" name="" value="SignOut">
     </form>

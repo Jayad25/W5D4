@@ -5,17 +5,22 @@
   <br>
   <label>Year:
   <input type="text" name="album[year]"></label>
+  <br>
+  <br>
   <label>type_of_band
   <input type="radio" name="album[type_of_band]" value="live" checked="checked">Live
   <input type="radio" name="album[type_of_band]" value="Studio" >Studio
   </label>
+
   <br>
-  <select name="album[band_id]">
+  <br>
+  <select name="album[band_id]"> Band
     <% @bands.each do |band| %>
     <option value="<%= band.id %>" selected="selected"><%= band.id %></option>
     <% end %>
   </select>
-
+  <br>
+<br>
   <input type="submit" name="" value="create album">
 
 </form>

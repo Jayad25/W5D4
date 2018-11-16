@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+input[type="button"]
+{
+  border-radius: 3px;
+  border-bottom: 3px;
+}
+#sigin_button {
+  display: inline-block;
+}

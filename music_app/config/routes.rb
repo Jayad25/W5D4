@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :bands do
     resources :albums, only:[:new]
   end
-  resources :albums,only:[:create,:edit,:show,:patch,:destroy,:index]
+  resources :albums,except:[:new]
   # , only:[:new,:create,:show]
   resource :session, only:[:new,:create,:destroy]
 end
